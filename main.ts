@@ -1,8 +1,8 @@
-function level () {
-    if (level2 == 1) {
+function level2 () {
+    if (level == 1) {
         scene.setBackgroundColor(9)
         tiles.setCurrentTilemap(tilemap`level1`)
-    } else if (level2 == 2) {
+    } else if (level == 2) {
         scene.setBackgroundColor(9)
         tiles.setCurrentTilemap(tilemap`level2`)
     } else {
@@ -10,9 +10,9 @@ function level () {
     }
 }
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
-    level2 += 1
+    level += 1
     level()
 })
-let level2 = 0
-level2 = 1
+let level = 0
+level = 1
 level()
