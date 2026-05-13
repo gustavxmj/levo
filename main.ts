@@ -102,7 +102,8 @@ function make_hiro () {
     200,
     true
     )
-    controller.moveSprite(hiro)
+    controller.moveSprite(hiro, 100, 0)
+    hiro.ay = 200
 }
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
     level += 1
@@ -112,3 +113,4 @@ let hiro: Sprite = null
 let level = 0
 level = 1
 make_level()
+make_hiro()
