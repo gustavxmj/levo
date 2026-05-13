@@ -108,7 +108,7 @@ function make_hiro () {
     tiles.placeOnRandomTile(hiro, assets.tile`myTile`)
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    hiro.vy = -150
+    hiro.vy = -125
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
     level += 1
