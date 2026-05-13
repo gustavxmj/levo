@@ -6,7 +6,7 @@ function make_level () {
         scene.setBackgroundColor(9)
         tiles.setCurrentTilemap(tilemap`level2`)
     } else {
-    	
+        game.gameOver(true)
     }
 }
 function make_hiro () {
@@ -104,10 +104,17 @@ function make_hiro () {
     )
     controller.moveSprite(hiro, 100, 0)
     hiro.ay = 200
+    scene.cameraFollowSprite(hiro)
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+	
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
     level += 1
     make_level()
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
+    game.gameOver(false)
 })
 let hiro: Sprite = null
 let level = 0
