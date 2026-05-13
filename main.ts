@@ -8,6 +8,7 @@ function make_level () {
     } else {
         game.gameOver(true)
     }
+    tiles.placeOnRandomTile(hiro, assets.tile`myTile`)
 }
 function make_hiro () {
     hiro = sprites.create(img`
@@ -105,7 +106,6 @@ function make_hiro () {
     controller.moveSprite(hiro, 100, 0)
     hiro.ay = 200
     scene.cameraFollowSprite(hiro)
-    tiles.placeOnRandomTile(hiro, assets.tile`myTile`)
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     hiro.vy = -125
